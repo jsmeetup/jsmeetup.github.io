@@ -6,7 +6,7 @@ var callback = function(data){
 
 var oReq = new XMLHttpRequest();
 
-oReq.open("GET", "http://jsmeetup/github.io/" + path, true);
+oReq.open("GET", "http://jsmeetup.github.io/" + path);
 
 oReq.onload = function(obj){
   console.log(obj);
