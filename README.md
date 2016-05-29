@@ -1,3 +1,3 @@
 # jsmeetup.github.io
 
-Test github hosting
+Testing github hosting
