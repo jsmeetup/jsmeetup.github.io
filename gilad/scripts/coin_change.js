@@ -2,6 +2,41 @@
 
 var n = 100;
 var coins = [1,5,10,20];
+
+var iterations = 0;
+
+function f(n){
+  if (n < 0){
+    return Infinity;
+    
+  } else if (n == 0){
+    return 0;
+    
+  } else {
+    var min = n;
+    for (let i of coins){
+      var min = Math.min(min,1 + f(n - i))
+    }
+    return min
+  }
+}
+
+function g(n,i){
+  if (n == 0){
+    return 0;
+  }
+  if (n < 0 || i == coins.length){
+    return Infinity;
+  }
+
+  var y = n;
+
+  for (var j=0; j<=Math.floor(n/coins[i]); j++){
+    y = Math.min(y,j + g(n - j*coins[i],i + 1));
+  }
+  return y;
+}
+
 var m = [];
 
 for (var i=0; i<coins.length+1; i++){
